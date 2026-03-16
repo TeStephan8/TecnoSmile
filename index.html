@@ -5,151 +5,471 @@
 <title>TECNOSMILE – Soluzioni Meccaniche Avanzate</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="TECNOSMILE realizza prototipi meccanici, attrezzature di test, saldature industriali e strutture metalliche di design per negozi.">
-
+<meta name="keywords" content="prototipi meccanici, attrezzature test, saldature industriali, strutture metalliche, scaffali ferro negozi">
+<meta name="robots" content="index, follow">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* --- TUTTO IL TUO CSS ORIGINALE RIMANE IDENTICO --- */
-</style>
-
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav id="main-nav">
-<a href="#top" class="nav-logo">
-<span class="nav-logo-text">TECNO<span>SMILE</span></span>
-</a>
-
-<ul class="nav-links">
-<li><a href="#top">Home</a></li>
-<li><a href="#profilo">Profilo</a></li>
-<li><a href="#competenze">Competenze</a></li>
-<li><a href="#realizzazioni">Realizzazioni</a></li>
-<li><a href="#contatti">Contatti</a></li>
-</ul>
+  <a href="#top" class="nav-logo" aria-label="TECNOSMILE – home">
+    <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="ng" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#4fc3ff"/>
+          <stop offset="100%" stop-color="#1a8fd1"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(30,30)">
+        <polygon points="-5,-22 5,-22 7,-17 -7,-17 13,-18 17,-13 11,-10 7,-15 19,-7 20,-1 14,-1 13,-7 20,1 19,7 13,7 14,1 17,13 13,18 7,15 11,10 5,22 -5,22 -7,17 7,17 -13,18 -17,13 -11,10 -7,15 -19,7 -20,1 -14,1 -13,7 -20,-1 -19,-7 -13,-7 -14,-1 -17,-13 -13,-18 -7,-15 -11,-10" fill="none" stroke="url(#ng)" stroke-width="1"/>
+        <circle r="17" fill="none" stroke="url(#ng)" stroke-width="1.5"/>
+        <circle r="7"  fill="none" stroke="url(#ng)" stroke-width="1.2"/>
+        <circle r="2.5" fill="#4fc3ff"/>
+        <line x1="0" y1="-7" x2="0" y2="-17" stroke="#4fc3ff" stroke-width="1.2" opacity="0.55"/>
+        <line x1="0" y1="7"  x2="0" y2="17"  stroke="#4fc3ff" stroke-width="1.2" opacity="0.55"/>
+        <line x1="-7" y1="0" x2="-17" y2="0" stroke="#4fc3ff" stroke-width="1.2" opacity="0.55"/>
+        <line x1="7"  y1="0" x2="17"  y2="0" stroke="#4fc3ff" stroke-width="1.2" opacity="0.55"/>
+      </g>
+    </svg>
+    <span class="nav-logo-text">TECNO<span>SMILE</span></span>
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#top">Home</a></li>
+    <li><a href="#profilo">Profilo</a></li>
+    <li><a href="#competenze">Competenze</a></li>
+    <li><a href="#realizzazioni">Realizzazioni</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
 </nav>
 
-<header id="top">
-<h1>TECNO<span>SMILE</span></h1>
-<p class="tagline">
-Soluzioni meccaniche avanzate per prototipazione, attrezzature di test e saldature industriali.
-</p>
+<!-- HERO -->
+<header id="top" class="reveal">
+  <h1>TECNO<span>SMILE</span></h1>
+  <p class="tagline"><span id="tagline-text"></span><span class="tagline-cursor" id="tagline-cursor"></span></p>
+  <p class="sub">Engineering &bull; Precision &bull; Reliability</p>
+  <div class="hero-divider">
+    <span class="hero-divider-line"></span>
+    <span class="hero-divider-dot"></span>
+    <span class="hero-divider-line"></span>
+  </div>
 </header>
 
-<section id="profilo">
-<h2>Profilo</h2>
+<div class="section-sep"></div>
 
-<p>
-<strong>TECNOSMILE</strong> opera nella progettazione e realizzazione di
-<strong>prototipi meccanici, attrezzature di collaudo e saldature industriali</strong>.
-</p>
-
+<!-- PROFILO -->
+<section id="profilo" class="reveal">
+  <h2 class="section-title">Profilo</h2>
+  <div class="panel">
+    <p>
+      <strong>TECNOSMILE</strong> opera nella progettazione e realizzazione di
+      <strong>prototipi meccanici, attrezzature di collaudo e saldature industriali</strong>
+      destinati ad ambienti tecnici e produttivi ad alta affidabilità.
+      <br><br>
+      L'azienda supporta da anni <strong>realtà industriali strutturate</strong>
+      nello sviluppo di soluzioni meccaniche utilizzate per
+      <strong>test funzionali, verifiche di prodotto e validazioni tecniche</strong>.
+      <br><br>
+      Ogni progetto nasce da un'analisi tecnica delle esigenze operative del cliente
+      e viene sviluppato attraverso progettazione, realizzazione e integrazione
+      di componenti meccanici ad elevata precisione.
+      <br><br>
+      Accanto alle attività industriali, TECNOSMILE realizza anche
+      <strong>strutture metalliche di design e scaffalature in ferro</strong>
+      utilizzate come arredi tecnici per negozi e spazi espositivi.
+    </p>
+  </div>
 </section>
 
-<section id="competenze">
+<div class="section-sep"></div>
 
-<h2>Competenze</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Prototipazione tecnica</h3>
-<p>Prototipi funzionali su specifica cliente o progettazione interna.</p>
-</div>
-
-<div class="card">
-<h3>Attrezzature di test</h3>
-<p>Sistemi e attrezzature per collaudi e validazioni industriali.</p>
-</div>
-
-<div class="card">
-<h3>Saldature industriali</h3>
-<p>Saldature specialistiche ad alta precisione e qualità.</p>
-</div>
-
-<div class="card">
-<h3>Soluzioni su misura</h3>
-<p>Analisi tecnica, progettazione e realizzazione completa.</p>
-</div>
-
-<div class="card">
-<h3>Strutture e arredi in ferro</h3>
-<p>Strutture metalliche e scaffalature di design per negozi e spazi espositivi.</p>
-</div>
-
-</div>
-
+<!-- COMPETENZE -->
+<section id="competenze" class="reveal">
+  <h2 class="section-title">Competenze</h2>
+  <div class="grid">
+        <div class="card">
+      <div class="card-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2.5"/>
+      <line x1="20" y1="3" x2="20" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="32" x2="20" y2="37" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="3" y1="20" x2="8" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="32" y1="20" x2="37" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="7.5" y1="7.5" x2="11" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="29" y1="29" x2="32.5" y2="32.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="20" cy="20" r="2" fill="currentColor"/>
+    </svg></div>
+      <h3>Prototipazione tecnica</h3>
+      <p>Prototipi funzionali su specifica cliente o progettazione interna.</p>
+    </div>
+        <div class="card">
+      <div class="card-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="7" y="27" width="26" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+      <line x1="13" y1="27" x2="10" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="27" y1="27" x2="30" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M10 12 Q20 5 30 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <line x1="20" y1="8" x2="20" y2="27" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2"/>
+      <rect x="16" y="18" width="8" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="20" cy="20.5" r="1.2" fill="currentColor"/>
+    </svg></div>
+      <h3>Attrezzature di test</h3>
+      <p>Sistemi e attrezzature per collaudi e validazioni industriali.</p>
+    </div>
+        <div class="card">
+      <div class="card-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 33 L17 17 L21 21 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/>
+      <line x1="17" y1="17" x2="31" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M21 21 Q25 19 31 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      <circle cx="21.5" cy="20.5" r="1.8" fill="#4fc3ff"/>
+      <path d="M23 19 Q26 15 25 11" stroke="#4fc3ff" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.9"/>
+      <path d="M25 20 Q29 16 27 12" stroke="#4fc3ff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.55"/>
+      <path d="M26 22 Q31 19 29 15" stroke="#4fc3ff" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.3"/>
+    </svg></div>
+      <h3>Saldature industriali</h3>
+      <p>Saldature specialistiche ad alta precisione e qualità.</p>
+    </div>
+        <div class="card">
+      <div class="card-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="17" width="32" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+      <line x1="9"  y1="17" x2="9"  y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="14" y1="17" x2="14" y2="14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="17" x2="20" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="26" y1="17" x2="26" y2="14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="31" y1="17" x2="31" y2="13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="20" cy="29" r="3" stroke="currentColor" stroke-width="1.5"/>
+      <line x1="20" y1="25" x2="20" y2="25" stroke="currentColor"/>
+    </svg></div>
+      <h3>Soluzioni su misura</h3>
+      <p>Analisi tecnica, progettazione e realizzazione completa.</p>
+    </div>
+        <div class="card">
+      <div class="card-icon"><svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="9"  y1="5" x2="9"  y2="37" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="31" y1="5" x2="31" y2="37" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="9" y1="10" x2="31" y2="10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="9" y1="18" x2="31" y2="18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="9" y1="26" x2="31" y2="26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="9" y1="34" x2="31" y2="34" stroke="currentColor" stroke-width="2"   stroke-linecap="round"/>
+      <line x1="6" y1="37" x2="34" y2="37" stroke="currentColor" stroke-width="2"   stroke-linecap="round"/>
+    </svg></div>
+      <h3>Strutture e arredi in ferro</h3>
+      <p>Strutture metalliche e scaffalature di design per negozi e spazi espositivi.</p>
+    </div>
+      </div>
 </section>
 
-<section id="realizzazioni">
+<div class="section-sep"></div>
 
-<h2>Realizzazioni</h2>
+<!-- REALIZZAZIONI -->
+<section id="realizzazioni" class="reveal">
+  <h2 class="section-title">Realizzazioni</h2>
+  <div class="masonry">
+        <a href="img/lavoro1.jpg" data-gallery="portfolio" class="portfolio-item">
+      <img src="img/lavoro1.jpg" alt="Realizzazione TECNOSMILE">
+    </a>
+        <a href="img/lavoro2.jpg" data-gallery="portfolio" class="portfolio-item">
+      <img src="img/lavoro2.jpg" alt="Struttura metallica TECNOSMILE">
+    </a>
+        <a href="img/lavoro3.jpg" data-gallery="portfolio" class="portfolio-item">
+      <img src="img/lavoro3.jpg" alt="Progetto metallico TECNOSMILE">
+    </a>
+        <a href="img/lavoro4.jpg" data-gallery="portfolio" class="portfolio-item">
+      <img src="img/lavoro4.jpg" alt="Lavorazione ferro TECNOSMILE">
+    </a>
+        <a href="img/lavoro5.jpg" data-gallery="portfolio" class="portfolio-item">
+      <img src="img/lavoro5.jpg" alt="Struttura arredo negozio">
+    </a>
+        <a href="img/lavoro6.jpg" data-gallery="portfolio" class="portfolio-item">
+      <img src="img/lavoro6.jpg" alt="Realizzazione industriale TECNOSMILE">
+    </a>
+        <a href="img/lavoro7.jpg" data-gallery="portfolio" class="portfolio-item">
+      <img src="img/lavoro7.jpg" alt="Progetto metallico TECNOSMILE">
+    </a>
+    
+  </div><!-- /masonry -->
 
-<div class="masonry">
+  <!-- Progetti riservati -->
+  <h3 class="conf-subtitle">Progetti riservati</h3>
+  <div class="conf-grid">
+    <!-- CARD CONFIDENTIAL: lavori non fotografabili per accordo NDA -->
 
-<a href="img/lavoro1.jpg" data-gallery="portfolio" class="portfolio-item">
-<img src="img/lavoro1.jpg" alt="Realizzazione TECNOSMILE">
-</a>
+    <!-- 1. Veicolo pre-commerciale -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg1" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg1)"/>
+        <g opacity=".6">
+          <path d="M28 132 Q30 112 58 102 L88 80 Q118 64 158 64 Q196 64 220 80 L248 102 Q260 112 260 132 L260 150 Q260 157 252 157 L38 157 Q28 157 28 150Z" stroke="#4fc3ff" stroke-width="1.6" stroke-dasharray="7 4" style="animation:confDash 3s linear infinite"/>
+          <path d="M84 102 Q110 70 158 68 Q204 68 222 102" stroke="#4fc3ff" stroke-width="1.2" stroke-dasharray="5 3" style="animation:confDash 2.4s linear infinite"/>
+          <circle cx="84" cy="157" r="23" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3.5" style="animation:confDash 2s linear infinite"/>
+          <circle cx="84" cy="157" r="10" stroke="#4fc3ff" stroke-width=".8" opacity=".45"/>
+          <circle cx="207" cy="157" r="23" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3.5" style="animation:confDash 2s linear infinite"/>
+          <circle cx="207" cy="157" r="10" stroke="#4fc3ff" stroke-width=".8" opacity=".45"/>
+          <path d="M106 102 Q122 76 154 74 Q190 74 207 102" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 3" opacity=".5"/>
+        </g>
+        <rect x="58" y="84" width="165" height="20" rx="2" fill="rgba(8,13,24,.88)" stroke="rgba(79,195,255,.22)" stroke-width=".8"/>
+        <text x="140" y="98" text-anchor="middle" font-family="monospace" font-size="8" fill="#4fc3ff" opacity=".55" letter-spacing="3">CLASSIFIED</text>
+        <line x1="28" y1="178" x2="260" y2="178" stroke="#4fc3ff" stroke-width=".6" opacity=".18"/>
+        <line x1="28" y1="174" x2="28" y2="182" stroke="#4fc3ff" stroke-width=".6" opacity=".18"/>
+        <line x1="260" y1="174" x2="260" y2="182" stroke="#4fc3ff" stroke-width=".6" opacity=".18"/>
+        <text x="144" y="192" text-anchor="middle" font-family="monospace" font-size="7" fill="#4fc3ff" opacity=".16">??? mm</text>
+        <path d="M14 14L14 30M14 14L30 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 14L266 30M266 14L250 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 180M14 196L30 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 180M266 196L250 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">NDA · In sviluppo</span>
+    </div>
 
-<a href="img/lavoro2.jpg" data-gallery="portfolio" class="portfolio-item">
-<img src="img/lavoro2.jpg" alt="Struttura metallica TECNOSMILE">
-</a>
+    <!-- 2. Componente meccanico -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg2" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg2)"/>
+        <g style="transform-origin:140px 100px;animation:confRotate 20s linear infinite" opacity=".55">
+          <circle cx="140" cy="100" r="52" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3.5"/>
+          <circle cx="140" cy="100" r="24" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <rect x="135" y="40" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <rect x="135" y="145" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <rect x="83" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <rect x="182" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <g transform="rotate(45,140,100)">
+            <rect x="135" y="40" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+            <rect x="135" y="145" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+            <rect x="83" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+            <rect x="182" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          </g>
+          <circle cx="140" cy="100" r="6" fill="rgba(8,13,24,.9)" stroke="#4fc3ff" stroke-width="1.2"/>
+        </g>
+        <rect x="190" y="28" width="76" height="68" rx="3" fill="rgba(8,13,24,.88)" stroke="rgba(79,195,255,.22)" stroke-width=".8"/>
+        <text x="228" y="47" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#4fc3ff" opacity=".5" letter-spacing="1.5">SPECIFICHE</text>
+        <rect x="198" y="54" width="60" height="7" rx="1.5" fill="rgba(79,195,255,.14)"/>
+        <rect x="198" y="64" width="44" height="7" rx="1.5" fill="rgba(79,195,255,.09)"/>
+        <rect x="198" y="74" width="52" height="7" rx="1.5" fill="rgba(79,195,255,.11)"/>
+        <rect x="198" y="84" width="36" height="7" rx="1.5" fill="rgba(79,195,255,.08)"/>
+        <line x1="56" y1="172" x2="190" y2="172" stroke="#4fc3ff" stroke-width=".6" opacity=".2"/>
+        <line x1="56" y1="168" x2="56" y2="176" stroke="#4fc3ff" stroke-width=".6" opacity=".2"/>
+        <line x1="190" y1="168" x2="190" y2="176" stroke="#4fc3ff" stroke-width=".6" opacity=".2"/>
+        <text x="123" y="185" text-anchor="middle" font-family="monospace" font-size="7" fill="#4fc3ff" opacity=".16">&#216; &#9608;&#9608;&#9608; mm</text>
+        <path d="M14 14L14 28M14 14L28 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 14L266 28M266 14L252 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 182M14 196L28 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 182M266 196L252 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">Prototipo · Segreto industriale</span>
+    </div>
 
-<a href="img/lavoro3.jpg" data-gallery="portfolio" class="portfolio-item">
-<img src="img/lavoro3.jpg" alt="Progetto metallico TECNOSMILE">
-</a>
+    <!-- 3. Banco di test -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg3" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg3)"/>
+        <g opacity=".55">
+          <rect x="18" y="128" width="244" height="13" rx="2" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="7 3.5" style="animation:confDash 4.5s linear infinite"/>
+          <line x1="38" y1="141" x2="38" y2="188" stroke="#4fc3ff" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="242" y1="141" x2="242" y2="188" stroke="#4fc3ff" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="38" y1="188" x2="242" y2="188" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
+          <rect x="88" y="76" width="104" height="52" rx="4" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3" style="animation:confDash 3s linear infinite"/>
+          <line x1="88" y1="102" x2="50" y2="102" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="3 2.5" opacity=".7"/>
+          <line x1="192" y1="102" x2="230" y2="102" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="3 2.5" opacity=".7"/>
+          <rect x="40" y="95" width="10" height="14" rx="2" stroke="#4fc3ff" stroke-width=".9"/>
+          <rect x="230" y="95" width="10" height="14" rx="2" stroke="#4fc3ff" stroke-width=".9"/>
+          <path d="M45 109 Q45 122 72 128" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2" opacity=".4" fill="none"/>
+          <path d="M235 109 Q235 122 208 128" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2" opacity=".4" fill="none"/>
+          <rect x="104" y="36" width="72" height="34" rx="3" stroke="#4fc3ff" stroke-width="1.1"/>
+          <line x1="140" y1="70" x2="140" y2="76" stroke="#4fc3ff" stroke-width="1"/>
+          <rect x="112" y="44" width="56" height="18" rx="2" fill="rgba(79,195,255,.07)"/>
+          <text x="140" y="57" text-anchor="middle" font-family="monospace" font-size="11" fill="#4fc3ff" opacity=".5" style="animation:confBlink 2.2s step-end infinite">&#9608; &#9608; &#9608;</text>
+        </g>
+        <rect x="16" y="14" width="96" height="30" rx="3" fill="rgba(8,13,24,.88)" stroke="rgba(79,195,255,.25)" stroke-width=".8"/>
+        <text x="64" y="26" text-anchor="middle" font-family="monospace" font-size="7" fill="#4fc3ff" opacity=".6" letter-spacing="2">UNDER NDA</text>
+        <text x="64" y="37" text-anchor="middle" font-family="monospace" font-size="6" fill="#4fc3ff" opacity=".38" letter-spacing="1">VIETATO FOTOGRAFARE</text>
+        <path d="M266 14L266 28M266 14L252 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 182M266 196L252 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 182M14 196L28 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">Test · Omologazione</span>
+    </div>
 
-<a href="img/lavoro4.jpg" data-gallery="portfolio" class="portfolio-item">
-<img src="img/lavoro4.jpg" alt="Lavorazione ferro TECNOSMILE">
-</a>
+    <!-- 4. Progetto riservato -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg4" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg4)"/>
+        <g opacity=".55">
+          <path d="M38 72 L38 168 Q38 174 44 174 L236 174 Q242 174 242 168 L242 82 Q242 76 236 76 L132 76 L119 64 Q116 58 110 58 L44 58 Q38 58 38 64 Z" stroke="#4fc3ff" stroke-width="1.4" stroke-dasharray="7 4" style="animation:confDash 4s linear infinite"/>
+          <line x1="62" y1="108" x2="186" y2="108" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <line x1="62" y1="120" x2="168" y2="120" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <line x1="62" y1="132" x2="178" y2="132" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <line x1="62" y1="144" x2="150" y2="144" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <rect x="116" y="88" width="48" height="36" rx="4" fill="rgba(8,13,24,.92)" stroke="#4fc3ff" stroke-width="1.3"/>
+          <path d="M124 88 Q124 76 140 76 Q156 76 156 88" stroke="#4fc3ff" stroke-width="1.3" fill="none"/>
+          <circle cx="140" cy="109" r="6" stroke="#4fc3ff" stroke-width="1.3"/>
+          <line x1="140" y1="115" x2="140" y2="120" stroke="#4fc3ff" stroke-width="1.3"/>
+        </g>
+        <g transform="translate(196,52) rotate(-20)">
+          <rect x="-46" y="-14" width="92" height="28" rx="3" fill="none" stroke="#4fc3ff" stroke-width="1.1" opacity=".3"/>
+          <text text-anchor="middle" y="6" font-family="monospace" font-size="8.5" fill="#4fc3ff" opacity=".26" letter-spacing="2">CONFIDENTIAL</text>
+        </g>
+        <path d="M14 14L14 28M14 14L28 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 14L266 28M266 14L252 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 182M14 196L28 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 182M266 196L252 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">Progetto riservato</span>
+    </div>
 
-<a href="img/lavoro5.jpg" data-gallery="portfolio" class="portfolio-item">
-<img src="img/lavoro5.jpg" alt="Struttura arredo negozio">
-</a>
-
-<a href="img/lavoro6.jpg" data-gallery="portfolio" class="portfolio-item">
-<img src="img/lavoro6.jpg" alt="Realizzazione industriale TECNOSMILE">
-</a>
-
-<a href="img/lavoro7.jpg" data-gallery="portfolio" class="portfolio-item">
-<img src="img/lavoro7.jpg" alt="Progetto metallico TECNOSMILE">
-</a>
-
-</div>
-
+  </div><!-- /conf-grid -->
 </section>
 
-<footer id="contatti">
+<!-- LIGHTBOX -->
+<div id="lb-overlay" role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
+  <span id="lb-counter"></span>
+  <button id="lb-close" aria-label="Chiudi">&times;</button>
+  <button id="lb-prev" aria-label="Precedente">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next" aria-label="Successiva">&#8250;</button>
+  <span id="lb-caption"></span>
+</div>
 
-<h2>Contatti</h2>
+<div class="section-sep"></div>
 
-<p>
-Telefono: +39 02 6175760
-</p>
+<!-- FOOTER -->
+<footer id="contatti" class="reveal">
+  <div class="footer-inner">
 
-<p>
-Email:
-<a href="mailto:info@tecnosmile.it">
-info@tecnosmile.it
-</a>
-</p>
+    <div class="footer-col">
+      <h2>Contatti</h2>
+      <p style="font-size:0.88rem;line-height:1.75;color:var(--text-muted);margin-bottom:20px;">Siamo a vostra disposizione per qualsiasi informazione sui nostri servizi, sui tempi di realizzazione o per richiedere un preventivo. Contattateci telefonicamente o per email: risponderemo con piacere.</p>
+      <div class="footer-contact-item">
+        <span class="footer-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.82 19.79 19.79 0 01.88 1.18 2 2 0 012.86 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.65a16 16 0 006.29 6.29l1.02-.99a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+        </span>
+        <span>+39 02 6175760</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </span>
+        <span><a href="/cdn-cgi/l/email-protection#ddb4b3bbb29da9b8beb3b2aeb0b4b1b8f3b4a9"><span class="__cf_email__" data-cfemail="f79e999198b78392949998849a9e9b92d99e83">[email&#160;protected]</span></a></span>
+      </div>
+    </div>
 
-<p>
-© <span id="year"></span> TECNOSMILE
-</p>
+    <div class="footer-col">
+      <h3>Dove siamo</h3>
+      <div class="footer-map">
+        <div class="footer-map-pin">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          TECNOSMILE
+        </div>
+        <strong>Milano Area</strong><br>
+        Via / Zona da inserire<br>
+        Milano (MI)<br>
+      </div>
+    </div>
 
+  </div>
+  <div class="footer-bottom">
+    © 2026 TECNOSMILE – Tutti i diritti riservati
+  </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── TYPING EFFECT ─────────────────────────
+(function(){
+  const el     = document.getElementById('tagline-text');
+  const cursor = document.getElementById('tagline-cursor');
+  const full   = 'Soluzioni meccaniche avanzate per prototipazione, attrezzature di test e saldature industriali.';
+  let i = 0;
+  function type(){
+    if(i < full.length){
+      el.textContent += full[i++];
+      // velocità variabile: più lenta all'inizio, poi accelera
+      const delay = i < 12 ? 80 : i < 30 ? 45 : 28;
+      setTimeout(type, delay);
+    } else {
+      setTimeout(() => { cursor.style.animation = 'none'; cursor.style.opacity = '0'; }, 1800);
+    }
+  }
+  setTimeout(type, 500);
+})();
 
-/* anno automatico */
-document.getElementById("year").textContent =
-new Date().getFullYear();
+// ── LIGHTBOX ──────────────────────────────
+(function(){
+  const overlay  = document.getElementById('lb-overlay');
+  const img      = document.getElementById('lb-img');
+  const btnClose = document.getElementById('lb-close');
+  const btnPrev  = document.getElementById('lb-prev');
+  const btnNext  = document.getElementById('lb-next');
+  const caption  = document.getElementById('lb-caption');
+  const counter  = document.getElementById('lb-counter');
+  let items = [], current = 0;
 
-/* qui rimane TUTTO il tuo javascript originale */
+  function open(index){
+    current = index;
+    const it = items[current];
+    img.src = it.src; img.alt = it.alt;
+    caption.textContent = it.alt;
+    counter.textContent = (current + 1) + ' / ' + items.length;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){ overlay.classList.remove('open'); document.body.style.overflow = ''; img.src = ''; }
+  function prev(){ open((current - 1 + items.length) % items.length); }
+  function next(){ open((current + 1) % items.length); }
 
-</script>
+  document.querySelectorAll('a[data-gallery]').forEach((a, i) => {
+    items.push({ src: a.href, alt: a.querySelector('img')?.alt || '' });
+    a.addEventListener('click', e => { e.preventDefault(); open(i); });
+  });
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click',  e => { e.stopPropagation(); prev(); });
+  btnNext.addEventListener('click',  e => { e.stopPropagation(); next(); });
+  overlay.addEventListener('click',  e => { if(e.target === overlay) close(); });
+  document.addEventListener('keydown', e => {
+    if(!overlay.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowLeft') prev();
+    if(e.key === 'ArrowRight') next();
+  });
+})();
 
-</body>
-</html>
+// ── NAVBAR ────────────────────────────────
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
+document.getElementById('nav-toggle').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a =>
+  a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'))
+);
+const sections = document.querySelectorAll('[id]');
+const navAs    = document.querySelectorAll('.nav-links a');
+const activateLink = () => {
+  let cur = 'top';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  navAs.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+};
+window.addEventListener('scroll', activateLink, {passive:true});
+activateLink();
+
+// ── REVEAL ────────────────────────────────
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('active'); revObs.unobserve(e.target); } });
+}, {threshold:0.12});
+document.querySelectorAll('.reveal').forEach(r => revObs.observe(r));
+
+// ── MASONRY REVEAL ────────────────────────
+const portItems = document.querySelectorAll('.portfolio-item, .conf-card');
+const portObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersect

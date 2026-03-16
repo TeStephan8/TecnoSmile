@@ -284,6 +284,56 @@ section{padding:55px 20px;max-width:1200px;margin:auto;}
 .portfolio-item img{width:100%;display:block;transition:transform .4s ease;}
 .portfolio-item:hover img{transform:scale(1.05);}
 
+/* ── CARD CONFIDENTIAL ───────────────────── */
+.conf-subtitle{
+  font-size:0.75rem;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--text-muted);opacity:0.5;
+  margin:40px 0 18px;
+}
+.conf-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+.conf-card{
+  break-inside:avoid;
+  display:block;
+  margin-bottom:18px;
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio:4/3;
+  background:linear-gradient(145deg,#131b30,#0d1426);
+  border:1px solid var(--border);
+  opacity:0;transform:translateY(28px);
+  transition:opacity .7s ease,transform .7s ease,border-color .3s,box-shadow .3s;
+}
+.conf-card.visible{opacity:1;transform:translateY(0);}
+.conf-card:hover{border-color:rgba(79,195,255,.3);box-shadow:0 14px 44px rgba(0,0,0,.7);}
+.conf-card svg.ill{position:absolute;inset:0;width:100%;height:100%;}
+.conf-card::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(79,195,255,.016) 3px,rgba(79,195,255,.016) 4px);
+}
+.conf-badge{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  z-index:2;white-space:nowrap;
+  display:flex;align-items:center;gap:6px;
+  background:rgba(8,13,24,.85);border:1px solid rgba(79,195,255,.22);
+  border-radius:20px;padding:4px 13px;
+  font-size:.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
+}
+.conf-badge::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--accent);flex-shrink:0;
+  animation:confPulse 2s ease-in-out infinite;
+}
+@keyframes confPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+@keyframes confDash{to{stroke-dashoffset:-40}}
+@keyframes confRotate{to{transform:rotate(360deg)}}
+@keyframes confBlink{0%,100%{opacity:.5}40%,60%{opacity:.1}}
+
 /* ── LIGHTBOX ────────────────────────────── */
 #lb-overlay{
   display:none;position:fixed;inset:0;z-index:9000;
@@ -486,7 +536,141 @@ footer{
       <img src="<?= htmlspecialchars($item['src']) ?>" alt="<?= htmlspecialchars($item['alt']) ?>">
     </a>
     <?php endforeach; ?>
-  </div>
+
+  </div><!-- /masonry -->
+
+  <!-- Progetti riservati -->
+  <h3 class="conf-subtitle">Progetti riservati</h3>
+  <div class="conf-grid">
+    <!-- CARD CONFIDENTIAL: lavori non fotografabili per accordo NDA -->
+
+    <!-- 1. Veicolo pre-commerciale -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg1" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg1)"/>
+        <g opacity=".6">
+          <path d="M28 132 Q30 112 58 102 L88 80 Q118 64 158 64 Q196 64 220 80 L248 102 Q260 112 260 132 L260 150 Q260 157 252 157 L38 157 Q28 157 28 150Z" stroke="#4fc3ff" stroke-width="1.6" stroke-dasharray="7 4" style="animation:confDash 3s linear infinite"/>
+          <path d="M84 102 Q110 70 158 68 Q204 68 222 102" stroke="#4fc3ff" stroke-width="1.2" stroke-dasharray="5 3" style="animation:confDash 2.4s linear infinite"/>
+          <circle cx="84" cy="157" r="23" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3.5" style="animation:confDash 2s linear infinite"/>
+          <circle cx="84" cy="157" r="10" stroke="#4fc3ff" stroke-width=".8" opacity=".45"/>
+          <circle cx="207" cy="157" r="23" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3.5" style="animation:confDash 2s linear infinite"/>
+          <circle cx="207" cy="157" r="10" stroke="#4fc3ff" stroke-width=".8" opacity=".45"/>
+          <path d="M106 102 Q122 76 154 74 Q190 74 207 102" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 3" opacity=".5"/>
+        </g>
+        <rect x="58" y="84" width="165" height="20" rx="2" fill="rgba(8,13,24,.88)" stroke="rgba(79,195,255,.22)" stroke-width=".8"/>
+        <text x="140" y="98" text-anchor="middle" font-family="monospace" font-size="8" fill="#4fc3ff" opacity=".55" letter-spacing="3">CLASSIFIED</text>
+        <line x1="28" y1="178" x2="260" y2="178" stroke="#4fc3ff" stroke-width=".6" opacity=".18"/>
+        <line x1="28" y1="174" x2="28" y2="182" stroke="#4fc3ff" stroke-width=".6" opacity=".18"/>
+        <line x1="260" y1="174" x2="260" y2="182" stroke="#4fc3ff" stroke-width=".6" opacity=".18"/>
+        <text x="144" y="192" text-anchor="middle" font-family="monospace" font-size="7" fill="#4fc3ff" opacity=".16">??? mm</text>
+        <path d="M14 14L14 30M14 14L30 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 14L266 30M266 14L250 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 180M14 196L30 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 180M266 196L250 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">NDA · In sviluppo</span>
+    </div>
+
+    <!-- 2. Componente meccanico -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg2" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg2)"/>
+        <g style="transform-origin:140px 100px;animation:confRotate 20s linear infinite" opacity=".55">
+          <circle cx="140" cy="100" r="52" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3.5"/>
+          <circle cx="140" cy="100" r="24" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="3 2.5"/>
+          <rect x="135" y="40" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <rect x="135" y="145" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <rect x="83" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <rect x="182" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          <g transform="rotate(45,140,100)">
+            <rect x="135" y="40" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+            <rect x="135" y="145" width="10" height="15" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+            <rect x="83" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+            <rect x="182" y="93" width="15" height="10" rx="2" stroke="#4fc3ff" stroke-width="1" fill="rgba(8,13,24,.6)"/>
+          </g>
+          <circle cx="140" cy="100" r="6" fill="rgba(8,13,24,.9)" stroke="#4fc3ff" stroke-width="1.2"/>
+        </g>
+        <rect x="190" y="28" width="76" height="68" rx="3" fill="rgba(8,13,24,.88)" stroke="rgba(79,195,255,.22)" stroke-width=".8"/>
+        <text x="228" y="47" text-anchor="middle" font-family="monospace" font-size="6.5" fill="#4fc3ff" opacity=".5" letter-spacing="1.5">SPECIFICHE</text>
+        <rect x="198" y="54" width="60" height="7" rx="1.5" fill="rgba(79,195,255,.14)"/>
+        <rect x="198" y="64" width="44" height="7" rx="1.5" fill="rgba(79,195,255,.09)"/>
+        <rect x="198" y="74" width="52" height="7" rx="1.5" fill="rgba(79,195,255,.11)"/>
+        <rect x="198" y="84" width="36" height="7" rx="1.5" fill="rgba(79,195,255,.08)"/>
+        <line x1="56" y1="172" x2="190" y2="172" stroke="#4fc3ff" stroke-width=".6" opacity=".2"/>
+        <line x1="56" y1="168" x2="56" y2="176" stroke="#4fc3ff" stroke-width=".6" opacity=".2"/>
+        <line x1="190" y1="168" x2="190" y2="176" stroke="#4fc3ff" stroke-width=".6" opacity=".2"/>
+        <text x="123" y="185" text-anchor="middle" font-family="monospace" font-size="7" fill="#4fc3ff" opacity=".16">&#216; &#9608;&#9608;&#9608; mm</text>
+        <path d="M14 14L14 28M14 14L28 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 14L266 28M266 14L252 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 182M14 196L28 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 182M266 196L252 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">Prototipo · Segreto industriale</span>
+    </div>
+
+    <!-- 3. Banco di test -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg3" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg3)"/>
+        <g opacity=".55">
+          <rect x="18" y="128" width="244" height="13" rx="2" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="7 3.5" style="animation:confDash 4.5s linear infinite"/>
+          <line x1="38" y1="141" x2="38" y2="188" stroke="#4fc3ff" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="242" y1="141" x2="242" y2="188" stroke="#4fc3ff" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="38" y1="188" x2="242" y2="188" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
+          <rect x="88" y="76" width="104" height="52" rx="4" stroke="#4fc3ff" stroke-width="1.3" stroke-dasharray="5 3" style="animation:confDash 3s linear infinite"/>
+          <line x1="88" y1="102" x2="50" y2="102" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="3 2.5" opacity=".7"/>
+          <line x1="192" y1="102" x2="230" y2="102" stroke="#4fc3ff" stroke-width="1" stroke-dasharray="3 2.5" opacity=".7"/>
+          <rect x="40" y="95" width="10" height="14" rx="2" stroke="#4fc3ff" stroke-width=".9"/>
+          <rect x="230" y="95" width="10" height="14" rx="2" stroke="#4fc3ff" stroke-width=".9"/>
+          <path d="M45 109 Q45 122 72 128" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2" opacity=".4" fill="none"/>
+          <path d="M235 109 Q235 122 208 128" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2" opacity=".4" fill="none"/>
+          <rect x="104" y="36" width="72" height="34" rx="3" stroke="#4fc3ff" stroke-width="1.1"/>
+          <line x1="140" y1="70" x2="140" y2="76" stroke="#4fc3ff" stroke-width="1"/>
+          <rect x="112" y="44" width="56" height="18" rx="2" fill="rgba(79,195,255,.07)"/>
+          <text x="140" y="57" text-anchor="middle" font-family="monospace" font-size="11" fill="#4fc3ff" opacity=".5" style="animation:confBlink 2.2s step-end infinite">&#9608; &#9608; &#9608;</text>
+        </g>
+        <rect x="16" y="14" width="96" height="30" rx="3" fill="rgba(8,13,24,.88)" stroke="rgba(79,195,255,.25)" stroke-width=".8"/>
+        <text x="64" y="26" text-anchor="middle" font-family="monospace" font-size="7" fill="#4fc3ff" opacity=".6" letter-spacing="2">UNDER NDA</text>
+        <text x="64" y="37" text-anchor="middle" font-family="monospace" font-size="6" fill="#4fc3ff" opacity=".38" letter-spacing="1">VIETATO FOTOGRAFARE</text>
+        <path d="M266 14L266 28M266 14L252 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 182M266 196L252 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 182M14 196L28 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">Test · Omologazione</span>
+    </div>
+
+    <!-- 4. Progetto riservato -->
+    <div class="conf-card">
+      <svg class="ill" viewBox="0 0 280 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="cg4" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0L0 0 0 22" fill="none" stroke="#1a2236" stroke-width=".6"/></pattern></defs>
+        <rect width="280" height="210" fill="url(#cg4)"/>
+        <g opacity=".55">
+          <path d="M38 72 L38 168 Q38 174 44 174 L236 174 Q242 174 242 168 L242 82 Q242 76 236 76 L132 76 L119 64 Q116 58 110 58 L44 58 Q38 58 38 64 Z" stroke="#4fc3ff" stroke-width="1.4" stroke-dasharray="7 4" style="animation:confDash 4s linear infinite"/>
+          <line x1="62" y1="108" x2="186" y2="108" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <line x1="62" y1="120" x2="168" y2="120" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <line x1="62" y1="132" x2="178" y2="132" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <line x1="62" y1="144" x2="150" y2="144" stroke="#4fc3ff" stroke-width=".9" stroke-dasharray="3 2.5" opacity=".45"/>
+          <rect x="116" y="88" width="48" height="36" rx="4" fill="rgba(8,13,24,.92)" stroke="#4fc3ff" stroke-width="1.3"/>
+          <path d="M124 88 Q124 76 140 76 Q156 76 156 88" stroke="#4fc3ff" stroke-width="1.3" fill="none"/>
+          <circle cx="140" cy="109" r="6" stroke="#4fc3ff" stroke-width="1.3"/>
+          <line x1="140" y1="115" x2="140" y2="120" stroke="#4fc3ff" stroke-width="1.3"/>
+        </g>
+        <g transform="translate(196,52) rotate(-20)">
+          <rect x="-46" y="-14" width="92" height="28" rx="3" fill="none" stroke="#4fc3ff" stroke-width="1.1" opacity=".3"/>
+          <text text-anchor="middle" y="6" font-family="monospace" font-size="8.5" fill="#4fc3ff" opacity=".26" letter-spacing="2">CONFIDENTIAL</text>
+        </g>
+        <path d="M14 14L14 28M14 14L28 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 14L266 28M266 14L252 14" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M14 196L14 182M14 196L28 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+        <path d="M266 196L266 182M266 196L252 196" stroke="#4fc3ff" stroke-width="1" opacity=".28"/>
+      </svg>
+      <span class="conf-badge">Progetto riservato</span>
+    </div>
+
+  </div><!-- /conf-grid -->
 </section>
 
 <!-- LIGHTBOX -->
@@ -632,7 +816,7 @@ const revObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(r => revObs.observe(r));
 
 // ── MASONRY REVEAL ────────────────────────
-const portItems = document.querySelectorAll('.portfolio-item');
+const portItems = document.querySelectorAll('.portfolio-item, .conf-card');
 const portObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){

@@ -463,13 +463,32 @@ window.addEventListener('scroll', activateLink, {passive:true});
 activateLink();
 
 // ── REVEAL ────────────────────────────────
-const revObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('active'); revObs.unobserve(e.target); } });
-}, {threshold:0.12});
-document.querySelectorAll('.reveal').forEach(r => revObs.observe(r));
+// Fallback immediato se il file è aperto localmente (file:///)
+const isLocal = location.protocol === 'file:';
+if (isLocal) {
+  // Tutto visibile subito, nessuna animazione
+  document.querySelectorAll('.reveal').forEach(r => r.classList.add('active'));
+  document.querySelectorAll('.portfolio-item, .conf-card').forEach(item => item.classList.add('visible'));
+} else {
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('active'); revObs.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(r => revObs.observe(r));
 
-// ── MASONRY REVEAL ────────────────────────
-const portItems = document.querySelectorAll('.portfolio-item, .conf-card');
-const portObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersect
+  // ── MASONRY REVEAL ──────────────────────
+  const portItems = document.querySelectorAll('.portfolio-item, .conf-card');
+  const portObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        portItems.forEach((item, i) => setTimeout(() => item.classList.add('visible'), i * 90));
+        portObs.disconnect();
+      }
+    });
+  }, {threshold:0.08});
+  if (portItems.length) portObs.observe(portItems[0]);
+}
+</script>
+</body>
+</html>

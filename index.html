@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="u-tooltip"></div>
 
 <!-- NAVBAR -->
 <nav id="main-nav">
@@ -465,9 +466,13 @@
         <table class="u-table">
           <thead>
             <tr>
-              <th>&Oslash;</th><th>Passo</th><th>&Oslash; di passo</th>
-              <th>&Oslash; di nocciolo</th><th>As mm&sup2;</th>
-              <th>Nm 8.8</th><th>Nm 10.9</th>
+              <th>&Oslash;</th>
+              <th class="u-th-tip" data-tip="Passo: distanza tra due filetti consecutivi, espressa in mm. Determina la velocità di avanzamento per giro.">Passo</th>
+              <th class="u-th-tip" data-tip="Diametro primitivo (o di passo): diametro del cilindro immaginario che passa per il punto medio del profilo del filetto, dove pieno e vuoto si equivalgono. Riferimento per i calcoli di ingaggio.">&Oslash; prim.</th>
+              <th class="u-th-tip" data-tip="Diametro del nocciolo (o di fondo, minore): il diametro più piccolo del filetto, misurato al fondo delle scanalature. Determina la sezione resistente del bullone e la sua capacità di carico.">&Oslash; nocc.</th>
+              <th class="u-th-tip" data-tip="Area di sollecitazione resistente (mm²): sezione virtuale usata per calcolare la resistenza a trazione del filetto. Valore normalizzato ISO 898.">As mm&sup2;</th>
+              <th class="u-th-tip" data-tip="Coppia di serraggio indicativa in Nm per bulloni classe 8.8, con coefficiente d'attrito μ=0.12 e superfici lubrificate. Da verificare sempre con il fornitore.">Nm 8.8</th>
+              <th class="u-th-tip" data-tip="Coppia di serraggio indicativa in Nm per bulloni classe 10.9, con coefficiente d'attrito μ=0.12 e superfici lubrificate. Da verificare sempre con il fornitore.">Nm 10.9</th>
             </tr>
           </thead>
           <tbody id="th-body"></tbody>
@@ -855,6 +860,34 @@ if (isLocal) {
   ctUpdateVc();
 
 })();
+// ── TOOLTIP TH ────────────────────────────
+(function(){
+  const tip = document.getElementById('u-tooltip');
+  const PAD = 14; // distanza dal cursore in px
+  document.querySelectorAll('.u-th-tip').forEach(el => {
+    el.addEventListener('mouseenter', function(e){
+      tip.textContent = this.dataset.tip;
+      tip.classList.add('visible');
+      posiziona(e);
+    });
+    el.addEventListener('mousemove', posiziona);
+    el.addEventListener('mouseleave', function(){
+      tip.classList.remove('visible');
+    });
+  });
+  function posiziona(e){
+    const W = tip.offsetWidth, H = tip.offsetHeight;
+    let x = e.clientX + PAD;
+    let y = e.clientY - H - PAD;
+    // evita uscita a destra
+    if(x + W > window.innerWidth - 8) x = e.clientX - W - PAD;
+    // evita uscita in alto
+    if(y < 8) y = e.clientY + PAD;
+    tip.style.left = x + 'px';
+    tip.style.top  = y + 'px';
+  }
+})();
+
 </script>
 </body>
 </html>

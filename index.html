@@ -43,6 +43,7 @@
     <li><a href="#profilo">Profilo</a></li>
     <li><a href="#competenze">Competenze</a></li>
     <li><a href="#realizzazioni">Realizzazioni</a></li>
+    <li><a href="#utility">Utility</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
 </nav>
@@ -338,6 +339,204 @@
 
 <div class="section-sep"></div>
 
+<!-- UTILITY TECNICHE -->
+<section id="utility" class="reveal">
+  <h2 class="section-title">Utility Tecniche</h2>
+  <p style="color:var(--text-muted);font-size:0.9rem;margin:-10px 0 28px;">Strumenti di calcolo per officina, progettazione e prototipazione.</p>
+  <div class="utility-grid">
+
+    <!-- ── Card 1: Convertitore Tecnico ─── -->
+    <div class="card utility-card">
+      <div class="utility-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 9h18"/><path d="M18 5l4 4-4 4"/>
+            <path d="M22 17H4"/><path d="M8 13l-4 4 4 4"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Convertitore Tecnico</h3>
+          <p class="utility-desc">Lunghezza &middot; Massa &middot; Temp &middot; Pressione &middot; Forza</p>
+        </div>
+      </div>
+      <div>
+        <label class="u-label" for="cv-cat">Grandezza</label>
+        <select id="cv-cat" class="u-input">
+          <option value="length">Lunghezza</option>
+          <option value="mass">Massa</option>
+          <option value="temp">Temperatura</option>
+          <option value="pressure">Pressione</option>
+          <option value="force">Forza</option>
+        </select>
+      </div>
+      <div class="u-row">
+        <div class="u-col">
+          <label class="u-label" for="cv-val">Valore</label>
+          <input type="number" id="cv-val" class="u-input" placeholder="0" step="any">
+        </div>
+        <div class="u-col">
+          <label class="u-label" for="cv-from">Da</label>
+          <select id="cv-from" class="u-input"></select>
+        </div>
+        <div class="u-col">
+          <label class="u-label" for="cv-to">A</label>
+          <select id="cv-to" class="u-input"></select>
+        </div>
+      </div>
+      <div class="u-result" id="cv-result">
+        <span class="u-placeholder">Inserisci un valore</span>
+      </div>
+    </div>
+
+    <!-- ── Card 2: Calcolo Peso Materiali ─ -->
+    <div class="card utility-card">
+      <div class="utility-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="13" y1="2" x2="13" y2="24"/>
+            <line x1="5"  y1="24" x2="21" y2="24"/>
+            <line x1="13" y1="5" x2="3"  y2="9"/>
+            <line x1="13" y1="5" x2="23" y2="9"/>
+            <path d="M3 9 Q1 14 5 14 Q9 14 7 9Z"/>
+            <path d="M23 9 Q25 14 21 14 Q17 14 19 9Z"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Calcolo Peso Materiali</h3>
+          <p class="utility-desc">Acciaio &middot; Alluminio &middot; Inox &middot; Rame &middot; Titanio</p>
+        </div>
+      </div>
+      <div class="u-row">
+        <div class="u-col">
+          <label class="u-label" for="pw-mat">Materiale</label>
+          <select id="pw-mat" class="u-input">
+            <option value="7.85">Acciaio C45</option>
+            <option value="7.93">Inox 304</option>
+            <option value="2.70">Alluminio</option>
+            <option value="8.96">Rame</option>
+            <option value="8.50">Ottone</option>
+            <option value="7.20">Ghisa</option>
+            <option value="4.51">Titanio</option>
+            <option value="1.14">Nylon PA6</option>
+            <option value="2.20">PTFE</option>
+          </select>
+        </div>
+        <div class="u-col">
+          <label class="u-label" for="pw-shape">Forma</label>
+          <select id="pw-shape" class="u-input">
+            <option value="prism">Prisma (L&times;W&times;H)</option>
+            <option value="cyl">Cilindro (D&times;L)</option>
+            <option value="tube">Tubo (De&times;Di&times;L)</option>
+          </select>
+        </div>
+      </div>
+      <div class="u-row" id="pw-dims"><!-- dinamico --></div>
+      <div class="u-result" id="pw-result">
+        <span class="u-placeholder">Inserisci le dimensioni in mm</span>
+      </div>
+    </div>
+
+    <!-- ── Card 3: Tabelle Filettature ──── -->
+    <div class="card utility-card">
+      <div class="utility-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <rect x="9" y="3" width="8" height="20" rx="1"/>
+            <line x1="5"  y1="7"  x2="9"  y2="7"/>
+            <line x1="17" y1="7"  x2="21" y2="7"/>
+            <line x1="5"  y1="11" x2="9"  y2="11"/>
+            <line x1="17" y1="11" x2="21" y2="11"/>
+            <line x1="5"  y1="15" x2="9"  y2="15"/>
+            <line x1="17" y1="15" x2="21" y2="15"/>
+            <line x1="5"  y1="19" x2="9"  y2="19"/>
+            <line x1="17" y1="19" x2="21" y2="19"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Tabelle Filettature</h3>
+          <p class="utility-desc">ISO metriche &middot; Passo &middot; Nocciolo &middot; Coppia</p>
+        </div>
+      </div>
+      <div>
+        <label class="u-label" for="th-filter">Cerca (es. M8)</label>
+        <input type="text" id="th-filter" class="u-input" placeholder="M3 &hellip; M36">
+      </div>
+      <div class="u-table-wrap">
+        <table class="u-table">
+          <thead>
+            <tr>
+              <th>&Oslash;</th><th>Passo</th><th>&Oslash; di passo</th>
+              <th>&Oslash; di nocciolo</th><th>As mm&sup2;</th>
+              <th>Nm 8.8</th><th>Nm 10.9</th>
+            </tr>
+          </thead>
+          <tbody id="th-body"></tbody>
+        </table>
+      </div>
+      <p style="font-size:0.68rem;color:var(--text-muted);opacity:0.55;margin-top:4px;">&ast; Coppia indicativa &mu;=0.12, superfici lubrificate. Verificare con il fornitore.</p>
+    </div>
+
+    <!-- ── Card 4: Calcolo Velocita Taglio  -->
+    <div class="card utility-card">
+      <div class="utility-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="13" cy="13" r="9"/>
+            <circle cx="13" cy="13" r="3"/>
+            <line x1="13" y1="4"  x2="13" y2="6.5"/>
+            <line x1="22" y1="13" x2="19.5" y2="13"/>
+            <line x1="4"  y1="13" x2="6.5"  y2="13"/>
+            <line x1="20.2" y1="5.8" x2="18.4" y2="7.6"/>
+            <line x1="13" y1="13" x2="18.8" y2="7.2" stroke-width="2.3"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Calcolo Velocit&agrave; di Taglio</h3>
+          <p class="utility-desc">RPM &middot; Vc &middot; Avanzamento indicativo</p>
+        </div>
+      </div>
+      <div class="u-row">
+        <div class="u-col">
+          <label class="u-label" for="ct-mat">Materiale</label>
+          <select id="ct-mat" class="u-input">
+            <option value="120|150|80">Acciaio C45</option>
+            <option value="50|80|30">Acciaio Inox</option>
+            <option value="400|500|200">Alluminio</option>
+            <option value="100|120|60">Ghisa grigia</option>
+            <option value="200|250|100">Ottone</option>
+            <option value="40|60|25">Titanio</option>
+          </select>
+        </div>
+        <div class="u-col">
+          <label class="u-label" for="ct-op">Operazione</label>
+          <select id="ct-op" class="u-input">
+            <option value="0">Fresatura</option>
+            <option value="1">Tornitura</option>
+            <option value="2">Foratura</option>
+          </select>
+        </div>
+      </div>
+      <div class="u-row">
+        <div class="u-col">
+          <label class="u-label" for="ct-d">&Oslash; utensile (mm)</label>
+          <input type="number" id="ct-d" class="u-input" placeholder="es. 10" min="0.1" step="0.1">
+        </div>
+        <div class="u-col">
+          <label class="u-label" for="ct-vc">Vc (m/min)</label>
+          <input type="number" id="ct-vc" class="u-input" placeholder="auto" min="1" step="1">
+        </div>
+      </div>
+      <button class="u-btn" id="ct-calc">Calcola RPM</button>
+      <div class="u-result" id="ct-result">
+        <span class="u-placeholder">Inserisci diametro e premi Calcola</span>
+      </div>
+    </div>
+
+  </div><!-- /utility-grid -->
+</section>
+
+<div class="section-sep"></div>
+
 <!-- FOOTER -->
 <footer id="contatti" class="reveal">
   <div class="footer-inner">
@@ -489,6 +688,173 @@ if (isLocal) {
   }, {threshold:0.08});
   if (portItems.length) portObs.observe(portItems[0]);
 }
+// ── UTILITY TECNICHE ──────────────────────
+(function(){
+
+  /* ── 1. CONVERTITORE TECNICO ────────────── */
+  const CV_UNITS = {
+    length:   {mm:1, cm:10, m:1000, 'in':25.4, ft:304.8},
+    mass:     {g:1, kg:1000, lb:453.592, oz:28.3495, t:1e6},
+    pressure: {bar:1, psi:0.0689476, MPa:10, kPa:0.01, atm:1.01325},
+    force:    {N:1, kN:1000, kgf:9.80665, lbf:4.44822}
+  };
+  const CV_TEMP = ['°C','°F','K'];
+
+  function toK(v,u){ return u==='°C'?v+273.15:u==='°F'?(v+459.67)*5/9:v; }
+  function frK(k,u){ return u==='°C'?k-273.15:u==='°F'?k*9/5-459.67:k; }
+
+  function cvPopulate(){
+    const cat = document.getElementById('cv-cat').value;
+    const units = cat==='temp' ? CV_TEMP : Object.keys(CV_UNITS[cat]);
+    ['cv-from','cv-to'].forEach((id,i)=>{
+      const sel = document.getElementById(id);
+      sel.innerHTML = units.map((u,j)=>`<option value="${u}"${j===i?'selected':''}>${u}</option>`).join('');
+      if(i===1&&units.length>1) sel.value = units[1];
+    });
+    cvCalc();
+  }
+
+  function cvCalc(){
+    const v    = parseFloat(document.getElementById('cv-val').value);
+    const from = document.getElementById('cv-from').value;
+    const to   = document.getElementById('cv-to').value;
+    const cat  = document.getElementById('cv-cat').value;
+    const res  = document.getElementById('cv-result');
+    if(isNaN(v)){ res.innerHTML='<span class="u-placeholder">Inserisci un valore</span>'; return; }
+    let r;
+    if(cat==='temp') r = frK(toK(v,from),to);
+    else { const t=CV_UNITS[cat]; r=v*t[from]/t[to]; }
+    const fmt = n => {
+      if(n===0) return '0';
+      if(Math.abs(n)<0.0001) return n.toExponential(4);
+      return parseFloat(n.toPrecision(7)).toLocaleString('it-IT',{maximumFractionDigits:6});
+    };
+    res.innerHTML = `<span class="u-res-main">${fmt(r)}</span><span class="u-res-unit">${to}</span><span class="u-res-sep">&nbsp;&middot;&nbsp;</span><span class="u-res-sub">${v}&nbsp;${from} &rarr; ${to}</span>`;
+  }
+
+  document.getElementById('cv-cat').addEventListener('change', cvPopulate);
+  document.getElementById('cv-val').addEventListener('input',  cvCalc);
+  document.getElementById('cv-from').addEventListener('change',cvCalc);
+  document.getElementById('cv-to').addEventListener('change',  cvCalc);
+  cvPopulate();
+
+
+  /* ── 2. CALCOLO PESO MATERIALI ──────────── */
+  const PW_DIMS = {
+    prism: ['L (mm)','W (mm)','H (mm)'],
+    cyl:   ['D (mm)','L (mm)'],
+    tube:  ['De (mm)','Di (mm)','L (mm)']
+  };
+
+  function pwRender(){
+    const shape  = document.getElementById('pw-shape').value;
+    const labels = PW_DIMS[shape];
+    const wrap   = document.getElementById('pw-dims');
+    wrap.innerHTML = labels.map((l,i)=>`
+      <div class="u-col">
+        <label class="u-label">${l}</label>
+        <input type="number" class="u-input pw-dim" data-i="${i}" placeholder="0" min="0" step="0.01">
+      </div>`).join('');
+    wrap.addEventListener('input', pwCalc); // re-attach each render
+    pwCalc();
+  }
+
+  function pwCalc(){
+    const shape = document.getElementById('pw-shape').value;
+    const rho   = parseFloat(document.getElementById('pw-mat').value);
+    const res   = document.getElementById('pw-result');
+    const vals  = [...document.querySelectorAll('.pw-dim')].map(i=>parseFloat(i.value)||0);
+    let vol = 0;
+    if(shape==='prism') vol = vals[0]*vals[1]*vals[2];
+    else if(shape==='cyl') vol = Math.PI*(vals[0]/2)**2*vals[1];
+    else if(shape==='tube') vol = Math.PI*((vals[0]/2)**2-(vals[1]/2)**2)*vals[2];
+    if(vol<=0){ res.innerHTML='<span class="u-placeholder">Inserisci le dimensioni in mm</span>'; return; }
+    const vol_cm3 = vol/1000;
+    const kg  = rho*vol_cm3/1000;
+    const lb  = kg*2.20462;
+    const fmtKg = kg<0.001 ? '<0.001' : kg.toLocaleString('it-IT',{maximumFractionDigits:4});
+    res.innerHTML = `<span class="u-res-main">${fmtKg}</span><span class="u-res-unit">kg</span><span class="u-res-sep">&nbsp;&middot;&nbsp;</span><span class="u-res-sub">${lb.toLocaleString('it-IT',{maximumFractionDigits:3})}&nbsp;lb</span><span class="u-res-sep">&nbsp;&middot;&nbsp;</span><span class="u-res-sub">${vol_cm3.toLocaleString('it-IT',{maximumFractionDigits:2})}&nbsp;cm&sup3;</span>`;
+  }
+
+  document.getElementById('pw-shape').addEventListener('change', pwRender);
+  document.getElementById('pw-mat').addEventListener('change', pwCalc);
+  pwRender();
+
+
+  /* ── 3. TABELLE FILETTATURE ─────────────── */
+  const TH_DATA = [
+    {d:'M3', p:0.5,  d2:2.675, d1:2.459, As:5.03, t88:0.9,  t109:1.3  },
+    {d:'M4', p:0.7,  d2:3.545, d1:3.242, As:8.78, t88:2.2,  t109:3.2  },
+    {d:'M5', p:0.8,  d2:4.480, d1:4.134, As:14.2, t88:4.5,  t109:6.6  },
+    {d:'M6', p:1.0,  d2:5.350, d1:4.917, As:20.1, t88:7.7,  t109:11   },
+    {d:'M8', p:1.25, d2:7.188, d1:6.647, As:36.6, t88:19,   t109:27   },
+    {d:'M10',p:1.5,  d2:9.026, d1:8.376, As:58.0, t88:38,   t109:54   },
+    {d:'M12',p:1.75, d2:10.863,d1:10.106,As:84.3, t88:66,   t109:94   },
+    {d:'M14',p:2.0,  d2:12.701,d1:11.835,As:115,  t88:105,  t109:150  },
+    {d:'M16',p:2.0,  d2:14.701,d1:13.835,As:157,  t88:160,  t109:230  },
+    {d:'M20',p:2.5,  d2:18.376,d1:17.294,As:245,  t88:320,  t109:450  },
+    {d:'M24',p:3.0,  d2:22.051,d1:20.752,As:353,  t88:550,  t109:780  },
+    {d:'M30',p:3.5,  d2:27.727,d1:26.211,As:561,  t88:1100, t109:1550 },
+    {d:'M36',p:4.0,  d2:33.402,d1:31.670,As:817,  t88:1900, t109:2700 },
+  ];
+
+  function thRender(filter){
+    const f = (filter||'').toLowerCase().trim();
+    const rows = TH_DATA.filter(t => !f || t.d.toLowerCase().includes(f));
+    document.getElementById('th-body').innerHTML = rows.length
+      ? rows.map(t=>`<tr>
+          <td>${t.d}</td>
+          <td>${t.p}</td>
+          <td>${t.d2.toFixed(3)}</td>
+          <td>${t.d1.toFixed(3)}</td>
+          <td>${t.As}</td>
+          <td>${t.t88}</td>
+          <td>${t.t109}</td>
+        </tr>`).join('')
+      : `<tr><td colspan="7" style="text-align:center;opacity:0.4;padding:12px;">Nessun risultato</td></tr>`;
+  }
+
+  document.getElementById('th-filter').addEventListener('input', e => thRender(e.target.value));
+  thRender();
+
+
+  /* ── 4. CALCOLO VELOCITA DI TAGLIO ──────── */
+  const CT_FEED = [
+    [0.05, 0.10, 0.15], // fresatura:  D<8, D<25, D>=25
+    [0.10, 0.20, 0.35], // tornitura
+    [0.05, 0.12, 0.20]  // foratura
+  ];
+
+  function ctUpdateVc(){
+    const vcs = document.getElementById('ct-mat').value.split('|').map(Number);
+    const op  = parseInt(document.getElementById('ct-op').value);
+    const inp = document.getElementById('ct-vc');
+    inp.placeholder = vcs[op] + ' (consigliato)';
+    inp.value = '';
+  }
+
+  function ctCalc(){
+    const vcs = document.getElementById('ct-mat').value.split('|').map(Number);
+    const op  = parseInt(document.getElementById('ct-op').value);
+    const D   = parseFloat(document.getElementById('ct-d').value);
+    const vcI = parseFloat(document.getElementById('ct-vc').value);
+    const Vc  = isNaN(vcI) ? vcs[op] : vcI;
+    const res = document.getElementById('ct-result');
+    if(!D || D<=0){ res.innerHTML='<span class="u-placeholder">Inserisci il diametro utensile</span>'; return; }
+    const n  = Math.round((Vc*1000)/(Math.PI*D));
+    const fi = D<8 ? 0 : D<25 ? 1 : 2;
+    const fz = CT_FEED[op][fi];
+    res.innerHTML = `<span class="u-res-main">${n.toLocaleString('it-IT')}</span><span class="u-res-unit">RPM</span><span class="u-res-sep">&nbsp;&middot;&nbsp;</span><span class="u-res-sub">Vc&nbsp;${Vc}&nbsp;m/min</span><span class="u-res-sep">&nbsp;&middot;&nbsp;</span><span class="u-res-sub">fz&nbsp;&asymp;&nbsp;${fz}&nbsp;mm/giro</span>`;
+  }
+
+  document.getElementById('ct-mat').addEventListener('change', ctUpdateVc);
+  document.getElementById('ct-op').addEventListener('change',  ctUpdateVc);
+  document.getElementById('ct-calc').addEventListener('click',  ctCalc);
+  document.getElementById('ct-d').addEventListener('keydown',  e=>{ if(e.key==='Enter') ctCalc(); });
+  document.getElementById('ct-vc').addEventListener('keydown', e=>{ if(e.key==='Enter') ctCalc(); });
+  ctUpdateVc();
+
+})();
 </script>
 </body>
 </html>

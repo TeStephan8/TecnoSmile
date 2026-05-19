@@ -338,6 +338,39 @@
   <span id="lb-caption"></span>
 </div>
 
+<!-- LOGIN MODAL -->
+<div id="login-modal" role="dialog" aria-modal="true" aria-label="Accesso progetto riservato">
+  <div class="login-modal-content">
+    <button id="login-close" aria-label="Chiudi">&times;</button>
+    <div class="login-modal-header">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="login-icon">
+        <rect x="8" y="18" width="24" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M12 18V14C12 9.58172 15.5817 6 20 6C24.4183 6 28 9.58172 28 14V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="20" cy="26" r="3" fill="currentColor"/>
+      </svg>
+      <h3>Accesso Riservato</h3>
+      <p>Inserisci le credenziali per accedere a questo progetto</p>
+    </div>
+    <form id="login-form" class="login-form">
+      <div class="login-field">
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" class="login-input" placeholder="Inserisci username" required>
+      </div>
+      <div class="login-field">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" class="login-input" placeholder="Inserisci password" required>
+      </div>
+      <button type="submit" class="login-submit">Accedi</button>
+    </form>
+    <div id="login-error" class="login-error" style="display:none;">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="error-icon">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+      </svg>
+      <span>Credenziali non valide. Accesso negato.</span>
+    </div>
+  </div>
+</div>
+
 <div class="section-sep"></div>
 
 <!-- UTILITY TECNICHE -->
@@ -859,6 +892,50 @@ if (isLocal) {
   document.getElementById('ct-vc').addEventListener('keydown', e=>{ if(e.key==='Enter') ctCalc(); });
   ctUpdateVc();
 
+})();
+// ── LOGIN MODAL ────────────────────────────
+(function(){
+  const modal = document.getElementById('login-modal');
+  const closeBtn = document.getElementById('login-close');
+  const form = document.getElementById('login-form');
+  const errorDiv = document.getElementById('login-error');
+
+  function openModal(){
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    errorDiv.style.display = 'none';
+    form.reset();
+    document.getElementById('login-username').focus();
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Apri modal quando si clicca su una card riservata
+  document.querySelectorAll('.conf-card').forEach(card => {
+    card.addEventListener('click', openModal);
+  });
+
+  // Chiudi modal con il bottone X
+  closeBtn.addEventListener('click', closeModal);
+
+  // Chiudi modal cliccando fuori
+  modal.addEventListener('click', e => {
+    if(e.target === modal) closeModal();
+  });
+
+  // Chiudi modal con ESC
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  // Gestione submit form - mostra sempre errore
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    errorDiv.style.display = 'flex';
+  });
 })();
 // ── TOOLTIP TH ────────────────────────────
 (function(){

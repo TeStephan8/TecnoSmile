@@ -13,6 +13,7 @@
 html{scroll-behavior:smooth;}
 body{
   font-family:'Inter',sans-serif;
+  overflow-x:hidden;
   background:
     linear-gradient(rgba(10,15,26,0.88),rgba(10,15,26,0.88)),
     url("img/bg-tech.jpg") center/cover no-repeat fixed;
@@ -315,10 +316,22 @@ footer{
 
 /* ── RESPONSIVE ──────────────────────────── */
 @media(max-width:720px){
-  header{padding:120px 20px 60px;}
-  header h1{font-size:2.2rem;letter-spacing:4px;}
-  nav{padding:0 18px;gap:0;}
-  .nav-logo-text{font-size:0.9rem;letter-spacing:2px;}
+  /* Hero */
+  header{padding:110px 16px 56px;}
+  header h1{font-size:2rem;letter-spacing:3px;}
+  .tagline{font-size:1rem;}
+  .sub{font-size:0.75rem;letter-spacing:2px;}
+  .btn-cta{padding:11px 22px;font-size:0.82rem;letter-spacing:1px;}
+
+  /* Sezioni */
+  section{padding:44px 16px;}
+  .section-title{font-size:1.75rem;}
+  .panel{padding:24px 18px;}
+  .panel p{font-size:0.97rem;}
+
+  /* Nav */
+  nav{padding:0 16px;gap:0;}
+  .nav-logo-text{font-size:0.88rem;letter-spacing:2px;}
   .nav-toggle{display:flex;}
   .nav-links{
     display:none;position:absolute;top:58px;left:0;right:0;
@@ -328,12 +341,44 @@ footer{
   }
   .nav-links.open{display:flex;}
   .nav-links a{padding:12px 24px;border-radius:0;font-size:0.95rem;}
+
+  /* Galleria */
   .masonry{columns:2 160px;}
-  .footer-inner{grid-template-columns:1fr;gap:32px;}
-  footer{padding:40px 24px 28px;}
+
+  /* Footer */
+  .footer-inner{grid-template-columns:1fr;gap:28px;}
+  footer{padding:36px 18px 24px;}
+  .footer-map{padding:18px;}
+
+  /* Utility */
+  .utility-grid{grid-template-columns:1fr;}
+  .u-input{padding:11px 12px;font-size:0.92rem;}
+  .u-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-height:210px;}
+  .u-table th{font-size:0.58rem;padding:6px 7px;}
+  .u-table td{font-size:0.78rem;padding:5px 7px;}
+  .u-res-main{font-size:1.15rem;}
+  #u-tooltip{display:none!important;}
 }
+
 @media(max-width:420px){
+  /* Hero ancora più compatto */
+  header h1{font-size:1.65rem;letter-spacing:2px;}
+  .tagline{font-size:0.92rem;}
+
+  /* Galleria */
   .masonry{columns:1;}
+
+  /* Card competenze: icone ridotte */
+  .card-icon{width:40px;height:40px;}
+  .card-icon svg{width:22px;height:22px;}
+
+  /* Utility: riga 3 colonne → Valore pieno + Da|A sotto */
+  .u-row-3col{flex-wrap:wrap;}
+  .u-row-3col .u-col-full{flex:0 0 100%;}
+  .u-row-3col .u-col{flex:1;}
+
+  /* Tabella: nascondi colonne meno critiche */
+  .u-table .col-hide-xs{display:none;}
 }
 
 /* ── UTILITY TECNICHE ────────────────────── */
@@ -430,63 +475,6 @@ footer{
 }
 .u-table td:first-child{color:var(--accent);font-weight:700;}
 .u-table tr:hover td{background:rgba(79,195,255,.04);}
-/* ── UTILITY MOBILE ──────────────────────── */
-@media(max-width:720px){
-  /* griglia: 1 colonna */
-  .utility-grid{grid-template-columns:1fr;}
-
-  /* tabella filettature: scroll orizzontale */
-  .u-table-wrap{
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    max-height:220px;
-  }
-  /* hint di scroll orizzontale */
-  .u-table-wrap::after{
-    content:'← scorrere →';
-    display:block;
-    text-align:center;
-    font-size:0.65rem;
-    letter-spacing:1px;
-    color:rgba(79,195,255,.35);
-    padding:4px 0 2px;
-  }
-  .u-table th{font-size:0.58rem;padding:6px 7px;letter-spacing:0.8px;}
-  .u-table td{font-size:0.78rem;padding:5px 7px;}
-
-  /* input e select: target touch più comodo */
-  .u-input{padding:11px 12px;font-size:0.92rem;}
-
-  /* risultato: testo più compatto */
-  .u-res-main{font-size:1.15rem;}
-  .u-res-sub{font-size:0.75rem;}
-
-  /* disabilita tooltip su touch (non hover) */
-  #u-tooltip{display:none !important;}
-}
-
-@media(max-width:420px){
-  /* riga a 3 colonne (Valore/Da/A) → 2 righe: valore pieno + Da|A affiancati */
-  .u-row-3col{flex-wrap:wrap;}
-  .u-row-3col .u-col-full{flex:0 0 100%;width:100%;}
-  .u-row-3col .u-col{flex:1;}
-
-  /* tutte le u-row a 2 col → stack verticale se serve */
-  .u-row{gap:8px;}
-
-  /* header card: icona più piccola */
-  .card-icon{width:40px;height:40px;}
-  .card-icon svg{width:22px;height:22px;}
-
-  /* utility desc */
-  .utility-desc{font-size:0.72rem;}
-
-  /* tabella: nascondi colonne meno critiche con data-attr fallback */
-  .u-table .col-hide-xs{display:none;}
-
-  /* hint scroll solo se tabella è davvero scrollabile */
-  .u-table-wrap{position:relative;}
-}
 
 /* ── TOOLTIP INTESTAZIONI TABELLA ─────────── */
 /* Div globale JS-driven: non clippato dall'overflow-y:auto della tabella */

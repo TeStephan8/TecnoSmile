@@ -430,8 +430,62 @@ footer{
 }
 .u-table td:first-child{color:var(--accent);font-weight:700;}
 .u-table tr:hover td{background:rgba(79,195,255,.04);}
+/* ── UTILITY MOBILE ──────────────────────── */
 @media(max-width:720px){
+  /* griglia: 1 colonna */
   .utility-grid{grid-template-columns:1fr;}
+
+  /* tabella filettature: scroll orizzontale */
+  .u-table-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    max-height:220px;
+  }
+  /* hint di scroll orizzontale */
+  .u-table-wrap::after{
+    content:'← scorrere →';
+    display:block;
+    text-align:center;
+    font-size:0.65rem;
+    letter-spacing:1px;
+    color:rgba(79,195,255,.35);
+    padding:4px 0 2px;
+  }
+  .u-table th{font-size:0.58rem;padding:6px 7px;letter-spacing:0.8px;}
+  .u-table td{font-size:0.78rem;padding:5px 7px;}
+
+  /* input e select: target touch più comodo */
+  .u-input{padding:11px 12px;font-size:0.92rem;}
+
+  /* risultato: testo più compatto */
+  .u-res-main{font-size:1.15rem;}
+  .u-res-sub{font-size:0.75rem;}
+
+  /* disabilita tooltip su touch (non hover) */
+  #u-tooltip{display:none !important;}
+}
+
+@media(max-width:420px){
+  /* riga a 3 colonne (Valore/Da/A) → 2 righe: valore pieno + Da|A affiancati */
+  .u-row-3col{flex-wrap:wrap;}
+  .u-row-3col .u-col-full{flex:0 0 100%;width:100%;}
+  .u-row-3col .u-col{flex:1;}
+
+  /* tutte le u-row a 2 col → stack verticale se serve */
+  .u-row{gap:8px;}
+
+  /* header card: icona più piccola */
+  .card-icon{width:40px;height:40px;}
+  .card-icon svg{width:22px;height:22px;}
+
+  /* utility desc */
+  .utility-desc{font-size:0.72rem;}
+
+  /* tabella: nascondi colonne meno critiche con data-attr fallback */
+  .u-table .col-hide-xs{display:none;}
+
+  /* hint scroll solo se tabella è davvero scrollabile */
+  .u-table-wrap{position:relative;}
 }
 
 /* ── TOOLTIP INTESTAZIONI TABELLA ─────────── */
